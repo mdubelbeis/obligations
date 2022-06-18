@@ -14,7 +14,7 @@ const ObligationItem = ({ title, priority, isActive }) => {
     >
       <h3>{title}</h3>
       <div className="text-center">
-        <small>{priority}</small>
+        <small>{priority.toUpperCase()}</small>
       </div>
     </li>
   );
