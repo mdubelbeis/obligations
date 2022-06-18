@@ -1,6 +1,19 @@
 import Button from './ui/Button';
 
-const InputForm = ({ handleShowForm }) => {
+const InputForm = ({
+  handleShowForm,
+  handleSubmit,
+  setTitle,
+  setPriority,
+  title,
+  priority,
+}) => {
+  const handleClickSubmit = (e) => {
+    e.preventDefault();
+
+    handleSubmit();
+  };
+
   return (
     <form className="w-11/12 max-w-xl bg-gray mx-auto p-6 space-y-6 mt-10 rounded-xl">
       <header className="text-2xl text-blue-gray text-center">
@@ -12,6 +25,8 @@ const InputForm = ({ handleShowForm }) => {
             className="w-full py-2 px-4 rounded-lg outline-sapphire"
             type="text"
             placeholder="Enter Obligation"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
           />
         </div>
 
@@ -20,6 +35,8 @@ const InputForm = ({ handleShowForm }) => {
           <select
             className="rounded-lg py-1 px-2 outline-sapphire"
             name="priority"
+            onChange={(e) => setPriority(e.target.value)}
+            value={priority}
           >
             <option value="low">Low</option>
             <option value="medium">Medium</option>
@@ -42,6 +59,7 @@ const InputForm = ({ handleShowForm }) => {
             bgColor="bg-dark-sapphire"
             txtColor="text-gray"
             hoverBg="hover:bg-sapphire"
+            onClick={handleClickSubmit}
           />
         </div>
       </div>
