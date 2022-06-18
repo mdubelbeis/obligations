@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Header from './components/Header';
 import ObligationForm from './components/ObligationForm';
 import ObligationsList from './components/ObligationsList';
@@ -30,11 +32,17 @@ const DUMMY_DATA = [
 ];
 
 function App() {
+  const [obligations, setObligations] = useState(DUMMY_DATA);
+
+  const handleFormSubmit = (formData) => {
+    return setObligations([formData, ...obligations]);
+  };
+
   return (
     <>
       <Header />
-      <ObligationForm />
-      <ObligationsList obligations={DUMMY_DATA} />
+      <ObligationForm handleFormSubmit={handleFormSubmit} />
+      <ObligationsList obligations={obligations} />
     </>
   );
 }
