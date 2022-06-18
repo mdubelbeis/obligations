@@ -1,8 +1,12 @@
+import Header from './components/Header';
+import ObligationForm from './components/ObligationForm';
+
 function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <>
+      <Header />
+      <ObligationForm />
+    </>
   );
 }
 
