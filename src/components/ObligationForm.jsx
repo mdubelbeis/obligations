@@ -18,7 +18,10 @@ const ObligationForm = () => {
 
           <div className="flex justify-end items-center space-x-2">
             <label>Set Priority</label>
-            <select className="rounded-lg py-1 px-2" name="priority">
+            <select
+              className="rounded-lg py-1 px-2 outline-sapphire"
+              name="priority"
+            >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
               <option value="high">High</option>
