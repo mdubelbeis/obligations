@@ -7,8 +7,9 @@ module.exports = {
         logo: ['Lobster', 'cursive'],
       },
       colors: {
-        sapphire: '#065A82',
-        'blue-gray': '#1C7293',
+        'light-sapphire': '#8ecae6',
+        sapphire: '#219ebc',
+        'dark-sapphire': '#023047',
         gray: '#EDF2F4',
       },
     },
