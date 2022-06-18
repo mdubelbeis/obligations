@@ -3,16 +3,36 @@ import { useState } from 'react';
 import InputForm from './InputForm';
 import Button from './ui/Button';
 
-const ObligationForm = () => {
+const ObligationForm = ({ handleFormSubmit }) => {
   const [showForm, setShowForm] = useState(false);
+  const [title, setTitle] = useState('');
+  const [priority, setPriority] = useState('low');
 
   const handleShowForm = () => {
     setShowForm(!showForm);
   };
 
+  const handleSubmit = () => {
+    handleFormSubmit({
+      id: Math.random().toString(),
+      title,
+      priority,
+      isActive: true,
+    });
+  };
+
   return (
     <section>
-      {showForm && <InputForm handleShowForm={handleShowForm} />}
+      {showForm && (
+        <InputForm
+          handleShowForm={handleShowForm}
+          handleSubmit={handleSubmit}
+          setTitle={setTitle}
+          setPriority={setPriority}
+          title={title}
+          priority={priority}
+        />
+      )}
       {!showForm && (
         <div className="flex justify-center mt-10">
           <Button
